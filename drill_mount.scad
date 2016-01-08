@@ -7,7 +7,7 @@
 // Configure
 od=43;
 id=15.4;
-clearance=1;
+clearance=0.5;
 slot_w=5;
 height=29;
 fn=200;
@@ -31,7 +31,7 @@ module bulk()
 module bulk_remove()
 {
     union(){
-        cylinder(h=4+height/2, r=id/2-clearance, center=true, $fn=fn);
+        cylinder(h=4+height/2, r=id/2+clearance, center=true, $fn=fn);
         translate([-od/4,0,0]) cube([2+od/2,slot_w,4+height/2], center=true);
     }
    
